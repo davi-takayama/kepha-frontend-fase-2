@@ -1,0 +1,27 @@
+import { IComprimento } from "util/interfaces/IComprimento";
+
+export const metro: IComprimento = {
+    nome: "Metro",
+    simbolo: "m",
+    emMetro: 1,
+    emPes: 3.28084,
+    emMilhas: 0.0006213719
+};
+
+export const pes: IComprimento = {
+    nome: "Pés",
+    simbolo: "ft",
+    emMetro: 0.3048,
+    emPes: 1,
+    emMilhas: 0.000189394
+};
+
+export const milhas: IComprimento = {
+    nome: "Milhas",
+    simbolo: "mi",
+    emMetro: 1609.34,
+    emPes: 5280,
+    emMilhas: 1
+};
+
+export const comprimentos: IComprimento[] = [metro, pes, milhas];

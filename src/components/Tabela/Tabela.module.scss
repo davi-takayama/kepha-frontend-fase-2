@@ -1,0 +1,18 @@
+.corpo {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    opacity: 75%;
+    padding: 1em
+}
+
+.titulo{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}

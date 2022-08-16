@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+.nav {
+    padding: 1em;
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    width: 60vw;
+    border: 3px solid transparent;
+}
+
+.titulo {
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-family: 'Hind Guntur', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}

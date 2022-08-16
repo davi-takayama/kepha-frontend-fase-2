@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classNames from "classnames";
+import Historico from "components/Historico";
+import Nav from "components/Nav";
+import { StrictMode } from "react";
+import s from "./App.module.scss";
+import t from "util/temas.module.scss";
+import { useRecoilValue } from "recoil";
+import { modo } from "util/states/atom";
+import Footer from "components/Footer";
+import Conversor from "components/Conversor";
+import Tabela from "components/Tabela";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const modoState = useRecoilValue(modo);
+
+    return (
+        <StrictMode>
+            <div className={classNames({
+                [s.app]: true,
+                [t.light__bg__base]: modoState,
+                [t.dark__bg__base]: !modoState,
+            })}>
+                <div className={s.fr}>
+                    <div>
+                        <Nav />
+                        <Conversor />
+                        <Tabela />
+                    </div>
+                    <Historico />
+                </div>
+                <Footer />
+            </div>
+        </StrictMode>
+    );
 }
-
-export default App;

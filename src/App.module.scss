@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.fr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 85%;
+}

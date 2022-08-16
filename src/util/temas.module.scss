@@ -1,0 +1,66 @@
+.light {
+    &__bg {
+        &__base {
+            //background gradient from F8F8F6 to A0C3E2 45deg
+            background: linear-gradient(125deg, #f6f7f8, #aaccee);
+            // background-color: #f8f8f6;
+        }
+
+        &__secundaria {
+            background-color: #A0C3E2;
+        }
+
+        &__terciaria {
+            background-color: #D7E0EB;
+        }
+
+        &__quaternaria {
+            background-color: #027DC5;
+        }
+    }
+
+    &__txt {
+        &__base {
+            color: #F8F8F6;
+        }
+
+        &__secundaria {
+            color: #A0C3E2;
+        }
+
+        &__terciaria {
+            color: #D7E0EB;
+        }
+
+        &__quaternaria {
+            color: #027DC5;
+        }
+    }
+}
+
+.dark {
+    &__bg {
+        &__base {
+            // background-color: #2A2C2B;
+            background: linear-gradient(125deg,#43474F, #2A2C2B,);
+        }
+
+        &__secundaria {
+            background-color: #43474F;
+        }
+
+        &__terciaria {
+            background-color: #252525;
+        }
+
+        &__quaternaria {
+            background-color: #546E7A;
+        }
+    }
+
+    &__txt {
+        &__quaternaria {
+            color: #9ebecd !important;
+        }
+    }
+}
