@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { galao } from "util/valores/volume";
 import { IHistorico } from "../interfaces/IHistorico";
 
 export const modo = atom({
@@ -19,4 +20,9 @@ export const historico = atom<IHistorico[]>({
 export const medida = atom({
     key: "medida",
     default: "volume"
+});
+
+export const converterPara = atom({
+    key: "converterPara",
+    default: galao.nome
 });

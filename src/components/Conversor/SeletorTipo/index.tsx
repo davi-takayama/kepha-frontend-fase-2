@@ -1,17 +1,14 @@
-import t from "util/temas.module.scss";
-import s from "./SeletorTipo.module.scss";
-import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from "@mui/material";
-import classNames from "classnames";
+import style from "./SeletorTipo.module.scss";
+import { InputLabel, Select, MenuItem, SelectChangeEvent, FormControl } from "@mui/material";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { modo, medida } from "util/states/atom";
+import { medida } from "util/states/atom";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
 import ScaleIcon from "@mui/icons-material/Scale";
 import StraightenIcon from "@mui/icons-material/Straighten";
 import ScienceIcon from "@mui/icons-material/Science";
 
 function SeletorTipo() {
-
-    const modoState = useRecoilValue(modo);
+    
     const medidaState = useRecoilValue(medida);
     const setMedidaState = useSetRecoilState(medida);
 
@@ -22,36 +19,34 @@ function SeletorTipo() {
     return (
         <FormControl
             sx={{ minWidth: 120, }}
-            className={classNames({
-                [t.dark__bg__secundaria]: !modoState,
-            })}
             variant="filled"
         >
             <InputLabel id="seletor-de-medidas">
                 Converter
             </InputLabel>
+
             <Select
                 labelId="seletor-de-medidas"
                 id="demo-simple-select"
                 value={medidaState}
-                label="medida"
+                label="Converter de:"
                 onChange={handleChange}
             >
-                <MenuItem value={"volume"} className={s.item}>
-                    <ScienceIcon /> Volume
+                <MenuItem value={"volume"} className={style.item}>
+                    <ScienceIcon /> Litro
                 </MenuItem>
 
-                <MenuItem value={"comprimento"} className={s.item}>
-                    <StraightenIcon /> Comprimento
+                <MenuItem value={"comprimento"} className={style.item}>
+                    <StraightenIcon /> Metro
                 </MenuItem>
 
-                <MenuItem value={"massa"} className={s.item}>
-                    <ScaleIcon /> Massa
+                <MenuItem value={"massa"} className={style.item}>
+                    <ScaleIcon /> Quilo
                 </MenuItem>
 
                 <MenuItem
-                    value={"temperatura"} className={s.item}>
-                    <ThermostatIcon /> Temperatura
+                    value={"temperatura"} className={style.item}>
+                    <ThermostatIcon /> Celsius
                 </MenuItem>
 
             </Select>

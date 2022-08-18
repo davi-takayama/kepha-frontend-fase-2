@@ -1,6 +1,6 @@
 import { ITemperatura } from "util/interfaces/ITemperatura";
 
-export const celcius: ITemperatura = {
+export const celsius: ITemperatura = {
     nome: "Celsius",
     simbolo: "°C",
     emCelsius: (valor: number) => valor,
@@ -24,4 +24,4 @@ export const fahrenheit: ITemperatura = {
     emFahrenheit: (valor: number) => valor
 };
 
-export const temperaturas: ITemperatura[] = [celcius, kelvin, fahrenheit];
+export const temperaturas: ITemperatura[] = [celsius, kelvin, fahrenheit];
