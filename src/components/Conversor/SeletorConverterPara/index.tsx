@@ -1,28 +1,25 @@
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { converterPara, medida } from "util/states/atom";
+import { converterDe, converterPara } from "util/states/atom";
 
 interface Props {
     opcoes: string[];
 }
 
-function SeletorMedida(prop: Props) {
+function SeletorConverterPara(prop: Props) {
     const setConverterPara = useSetRecoilState(converterPara);
     const converterParaState = useRecoilValue(converterPara);
-    const medidaState = useRecoilValue(medida);
 
     const handleChange = (event: SelectChangeEvent) => {
         setConverterPara(event.target.value);
     };
 
-    useEffect(() =>{
-        if(converterParaState === ""){
-            setConverterPara(prop.opcoes[0]);
-        }else{
-            setConverterPara(converterParaState);
-        }
-    },[medidaState, prop.opcoes]);
+    useEffect(() => {
+        console.log("AAAAAAAAAAAAAAAAAAA");
+        console.log(prop.opcoes[0]);
+        setConverterPara(prop.opcoes[0]);
+    }, [converterDe]);
 
     return (
         <FormControl sx={{ minWidth: 120 }}>
@@ -30,7 +27,7 @@ function SeletorMedida(prop: Props) {
             <Select
                 autoWidth
                 labelId="seletor-medida"
-                id="demo-simple-select"
+                id="seletorTipo"
                 value={converterParaState}
                 label="para:"
                 onChange={handleChange}
@@ -47,4 +44,4 @@ function SeletorMedida(prop: Props) {
     );
 }
 
-export default SeletorMedida;
+export default SeletorConverterPara;

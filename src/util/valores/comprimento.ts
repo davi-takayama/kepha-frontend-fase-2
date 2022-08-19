@@ -9,7 +9,7 @@ export const metro: IComprimento = {
 };
 
 export const pes: IComprimento = {
-    nome: "Pés",
+    nome: "Pé",
     simbolo: "ft",
     emMetro: 0.3048,
     emPes: 1,
@@ -17,7 +17,7 @@ export const pes: IComprimento = {
 };
 
 export const milhas: IComprimento = {
-    nome: "Milhas",
+    nome: "Milha",
     simbolo: "mi",
     emMetro: 1609.34,
     emPes: 5280,

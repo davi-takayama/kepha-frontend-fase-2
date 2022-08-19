@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;700&family=Inter:wght@400;700&display=swap');
 
-.page{
+.page {
     display: grid;
     grid-template-rows: 5fr 1fr;
     height: 100vh;
 }
 
-.main{
+.main {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    max-height: 80vh;
 }
-.content{
+
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;

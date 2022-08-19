@@ -9,7 +9,7 @@ export const quilo: IMassa = {
 };
 
 export const libras: IMassa = {
-    nome: "Libras",
+    nome: "Libra",
     simbolo: "lb",
     emQuilos: 0.453592,
     emLibras: 1,

@@ -16,3 +16,14 @@
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
+
+.switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        margin: auto 0;
+    }
+}

@@ -9,7 +9,7 @@ export const litro: IVolume = {
 };
 
 export const oncasFluidas: IVolume = {
-    nome: "Onças Fluidas",
+    nome: "Onça Fluida",
     simbolo: "fl oz",
     emLitro: 0.0295735,
     emOncas: 1,

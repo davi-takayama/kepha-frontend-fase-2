@@ -1,33 +1,10 @@
-import { medida } from "util/states/atom";
 import s from "./Tabela.module.scss";
 import classNames from "classnames";
-import { useRecoilValue } from "recoil";
-import ComprimentosTable from "./medidas/Comprimento";
-import MassaTable from "./medidas/Massa";
-import TemperaturaTable from "./medidas/Temperatura";
-import VolumeTable from "./medidas/Volume";
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import Corpo from "./Corpo";
+import THead from "./THead";
 
 function Tabela() {
-
-    const medidaState = useRecoilValue(medida);
-
-    let tabela: JSX.Element;
-
-    switch (medidaState) {
-    case "comprimento":
-        tabela = <ComprimentosTable />;
-        break;
-    case "massa":
-        tabela = <MassaTable />;
-        break;
-    case "temperatura":
-        tabela = <TemperaturaTable />;
-        break;
-    default:
-        tabela = <VolumeTable />;
-        break;
-    }
-
     return (
         <section className={classNames({
             [s.corpo]: true,
@@ -40,10 +17,31 @@ function Tabela() {
                 Tabela de conversões
             </h2>
 
-            {tabela}
+            <TableContainer component={Paper}>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>
+                                medida
+                            </TableCell>
+                            {
+                                //header da tabela
+                                <THead />
+                            }
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {
+                            //corpo da tabela
+                            <Corpo />
+                        }
+                    </TableBody>
+                </Table>
+            </TableContainer>
 
         </section>
     );
 }
 
 export default Tabela;
+

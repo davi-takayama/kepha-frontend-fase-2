@@ -1,14 +1,13 @@
 import { useSetRecoilState } from "recoil";
 import { historico } from "util/states/atom";
-import { IHistorico } from "util/interfaces/IHistorico";
+import { IHistoricoItem } from "util/interfaces/IHistoricoItem";
 
 const useAdicionaItem = () => {
-    const setListaHistorico = useSetRecoilState<IHistorico[]>(historico);
+    const setHistorico = useSetRecoilState(historico);
 
-    return (item: IHistorico) => {
-        setListaHistorico(oldList => [...oldList, item]);
+    return (item: IHistoricoItem) => {
+        return setHistorico(listaAntiga  => [...listaAntiga, item]);
     };
-
 };
 
 export default useAdicionaItem;
