@@ -1,6 +1,6 @@
 import style from "./Conversor.module.scss";
 import classNames from "classnames";
-import { Box, Button, Card, SelectChangeEvent, TextField } from "@mui/material";
+import { Box, Button, Paper, SelectChangeEvent, TextField } from "@mui/material";
 import ScaleIcon from "@mui/icons-material/Scale";
 import ScienceIcon from "@mui/icons-material/Science";
 import StraightenIcon from "@mui/icons-material/Straighten";
@@ -89,7 +89,7 @@ const Conversor = () => {
             className={classNames({
                 [style.corpo]: true,
             })}
-            component={Card}
+            component={Paper}
         >
             <Seletor
                 label={"converter de"}

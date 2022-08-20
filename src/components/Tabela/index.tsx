@@ -10,13 +10,13 @@ function Tabela() {
             className={classNames({
                 [s.corpo]: true,
             })}
-            component={Card}
+            component={Paper}
         >
             <h2 className={classNames({[s.titulo]: true,})}>
                 Tabela de conversões
             </h2>
 
-            <TableContainer component={Paper}>
+            <TableContainer component={Card}>
                 <Table>
                     <TableHead>
                         <TableRow>

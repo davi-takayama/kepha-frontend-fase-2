@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Item from "./Item";
 import { historico } from "util/states/atom";
 import { useRecoilValue } from "recoil";
-import { Box, Card } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 
 
 export default function Historico() {
@@ -12,7 +12,7 @@ export default function Historico() {
     return (
         <Box
             className={s.container}
-            component={Card}
+            component={Paper}
         >
             <aside className={s.historico}>
                 <h1 className={

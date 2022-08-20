@@ -1,6 +1,6 @@
 import s from "./Nav.module.scss";
 import classNames from "classnames";
-import { Box, Card, Switch } from "@mui/material";
+import { Box, Paper, Switch } from "@mui/material";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { claro_escuro } from "util/states/atom";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
@@ -17,7 +17,7 @@ export default function Nav() {
     return (
         <Box
             className={classNames({ [s.nav]: true, })}
-            component={Card}
+            component={Paper}
         >
             <h1 className={
                 classNames({

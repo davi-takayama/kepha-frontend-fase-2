@@ -5,7 +5,7 @@ import { StrictMode } from "react";
 import Footer from "components/Footer";
 import Conversor from "components/Conversor";
 import Tabela from "components/Tabela";
-import { Box, CssBaseline, Paper } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { darkTheme, lightTheme } from "util/tema";
 import { claro_escuro } from "util/states/atom";
@@ -19,7 +19,7 @@ export default function App() {
             <ThemeProvider theme={!modoState? darkTheme : lightTheme}>
                 <CssBaseline />
                 <Box className={style.page}>
-                    <Box component={Paper} className={style.main}>
+                    <div className={style.main}>
                         <section>
                             <Nav />
                             <Box className={style.content}>
@@ -28,7 +28,7 @@ export default function App() {
                             </Box>
                         </section>
                         <Historico />
-                    </Box>
+                    </div>
                     <Footer />
                 </Box>
             </ThemeProvider>
