@@ -91,45 +91,50 @@ const Conversor = () => {
             })}
             component={Paper}
         >
-            <Seletor
-                label={"converter de"}
-                id={"converterDe"}
-                itens={
-                    [
-                        { Nome: litro.nome, Icone: <ScienceIcon /> },
-                        { Nome: metro.nome, Icone: <StraightenIcon /> },
-                        { Nome: quilo.nome, Icone: <ScaleIcon /> },
-                        { Nome: celsius.nome, Icone: <ThermostatIcon /> },
-                    ]}
-                onChange={handleChangeDe}
-                value={converterDeState}
-            />
+            <div className={style.inputs}>
+                <Seletor
+                    label={"converter de"}
+                    id={"converterDe"}
+                    itens={
+                        [
+                            { Nome: litro.nome, Icone: <ScienceIcon /> },
+                            { Nome: metro.nome, Icone: <StraightenIcon /> },
+                            { Nome: quilo.nome, Icone: <ScaleIcon /> },
+                            { Nome: celsius.nome, Icone: <ThermostatIcon /> },
+                        ]}
+                    onChange={handleChangeDe}
+                    value={converterDeState}
+                />
 
-            <TextField label="valor a converter" variant="filled" type={"number"}
-                id="entrada"
-                value={entrada}
-                onChange={(e) => setEntrada(e.target.value)}
-            />
+                <TextField label="valor a converter" variant="filled" type={"number"}
+                    id="entrada"
+                    value={entrada}
+                    onChange={(e) => setEntrada(e.target.value)}
+                />
 
-            <Seletor
-                label={"converter para"}
-                id={"converter_para"}
-                itens={opcoes.map((item) => { return { Nome: item }; })}
-                onChange={handleChangePara}
-                value={converterParaState}
-            />
-
-            <p>
+                <Seletor
+                    label={"converter para"}
+                    id={"converter_para"}
+                    itens={opcoes.map((item) => { return { Nome: item }; })}
+                    onChange={handleChangePara}
+                    value={converterParaState}
+                />
+            </div>
+            
+            <div className={style.output}>
+                <p>
                 conversao: {saida} {unidadeSaida}
-            </p>
+                </p>
 
-            <Button
-                variant="contained"
-                size="large"
-                onClick={enviarAoHistorico}
-            >
+                <Button
+                    variant="contained"
+                    size="large"
+                    onClick={enviarAoHistorico}
+                >
                 Converter
-            </Button>
+                </Button>
+            </div>
+            
         </Box>
     );
 };

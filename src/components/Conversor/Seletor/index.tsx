@@ -17,11 +17,11 @@ export default function Seletor(prop: Props) {
 
     return (
         <FormControl
-            sx={{ minWidth: 120, }}
+            sx={{ width: 200}}
             variant="filled"
         >
             <InputLabel id={prop.id}>
-                Converter
+                {prop.label}
             </InputLabel>
 
             <Select

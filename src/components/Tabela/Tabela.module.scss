@@ -14,3 +14,9 @@
     text-transform: uppercase;
     margin-bottom: 1em;
 }
+
+@media screen and (max-width: 768px) {
+    .corpo {
+        display: none;
+    }
+}

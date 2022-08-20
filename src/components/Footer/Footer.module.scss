@@ -8,7 +8,7 @@
     border-radius: 25px 25px 0 0;
     display: grid;
     grid-template-columns: 2fr 1fr;
-
+    bottom: 0;
 }
 
 .descricao {
@@ -68,5 +68,12 @@
 
     &__item:hover {
         transform: scale(1.1);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
     }
 }

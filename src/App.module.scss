@@ -18,3 +18,17 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 768px) {
+    .page {
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        height: max-content;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        max-height: 170vh;
+        max-width: 100vw;
+    }
+}
