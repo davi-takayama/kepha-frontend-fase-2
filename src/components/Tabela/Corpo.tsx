@@ -16,9 +16,9 @@ export default function Corpo() {
             return (
                 <TableRow key={index}>
                     <TableCell>{item.nome + " (" + item.simbolo + ")"}</TableCell>
-                    <TableCell>{item.emMetro.toFixed(2)}</TableCell>
-                    <TableCell>{item.emPes.toFixed(2)}</TableCell>
-                    <TableCell>{item.emMilhas.toFixed(2)}</TableCell>
+                    <TableCell>{item.emMetro}</TableCell>
+                    <TableCell>{item.emPes}</TableCell>
+                    <TableCell>{item.emMilhas}</TableCell>
                 </TableRow>
             );
         });
@@ -28,9 +28,9 @@ export default function Corpo() {
             return (
                 <TableRow key={index}>
                     <TableCell>{item.nome + " (" + item.simbolo + ")"}</TableCell>
-                    <TableCell>{item.emLitro.toFixed(2)}</TableCell>
-                    <TableCell>{item.emOncas.toFixed(2)}</TableCell>
-                    <TableCell>{item.emGaloes.toFixed(2)}</TableCell>
+                    <TableCell>{item.emLitro.toFixed(3)}</TableCell>
+                    <TableCell>{item.emOncas.toFixed(3)}</TableCell>
+                    <TableCell>{item.emGaloes.toFixed(3)}</TableCell>
                 </TableRow>
             );
         });
@@ -52,9 +52,9 @@ export default function Corpo() {
             return (
                 <TableRow key={index}>
                     <TableCell>{item.nome + " (" + item.simbolo + ")"}</TableCell>
-                    <TableCell>{item.emQuilos.toFixed(2)}</TableCell>
-                    <TableCell>{item.emLibras.toFixed(2)}</TableCell>
-                    <TableCell>{item.emOncas.toFixed(2)}</TableCell>
+                    <TableCell>{item.emQuilos}</TableCell>
+                    <TableCell>{item.emLibras}</TableCell>
+                    <TableCell>{item.emOncas}</TableCell>
                 </TableRow>
             );
         });

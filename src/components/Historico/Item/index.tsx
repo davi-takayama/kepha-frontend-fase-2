@@ -2,7 +2,6 @@ import { IHistoricoItem } from "util/interfaces/IHistoricoItem";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Delete from "@mui/icons-material/Delete";
 import s from "./Item.module.scss";
-import classNames from "classnames";
 import { Button } from "@mui/material";
 import { useRemoveItem } from "util/hooks/useRemoveItem";
 
@@ -15,9 +14,7 @@ export default function Item({ item }: IProps) {
     const removeItem = useRemoveItem();
 
     return (
-        <li className={classNames({
-            [s.item]: true,
-        })}>
+        <li className={s.item}>
             <div className={s.valores}>
                 <div>
                     {item.valor_a_converter}{item.unidade_a_converter}
@@ -27,8 +24,6 @@ export default function Item({ item }: IProps) {
                     {item.valor_convertido}{item.unidade_convertida}
                 </div>
             </div>
-
-
             <Button
                 onClick={() => removeItem(item.id)}
             >

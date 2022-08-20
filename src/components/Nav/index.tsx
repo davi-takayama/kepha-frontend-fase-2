@@ -1,25 +1,24 @@
 import s from "./Nav.module.scss";
 import classNames from "classnames";
-import { Box, Switch } from "@mui/material";
+import { Box, Card, Switch } from "@mui/material";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { modo } from "util/states/atom";
+import { claro_escuro } from "util/states/atom";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
 export default function Nav() {
-    const modoState = useRecoilValue(modo);
-    const setModoState = useSetRecoilState(modo);
+    const modoState = useRecoilValue(claro_escuro);
+    const setModoState = useSetRecoilState(claro_escuro);
 
     function mudarTemaC_E() {
         setModoState(!modoState);
     }
 
     return (
-        <Box className={
-            classNames({
-                [s.nav]: true,
-            })
-        }>
+        <Box
+            className={classNames({ [s.nav]: true, })}
+            component={Card}
+        >
             <h1 className={
                 classNames({
                     [s.titulo]: true,

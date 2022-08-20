@@ -1,14 +1,9 @@
 import { atom } from "recoil";
-import { galao, litro } from "util/valores/volume";
+import { litro } from "util/valores/volume";
 import { IHistoricoItem } from "../interfaces/IHistoricoItem";
 
-export const modo = atom({
-    key: "light-dark",
-    default: true
-});
-
-export const gamer = atom({
-    key: "gamer",
+export const claro_escuro = atom({
+    key: "claro_escuro",
     default: true
 });
 

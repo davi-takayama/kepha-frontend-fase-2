@@ -48,7 +48,7 @@
         text-align: center;
 
         &__link {
-            text-decoration: none;
+            text-decoration: none !important;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;

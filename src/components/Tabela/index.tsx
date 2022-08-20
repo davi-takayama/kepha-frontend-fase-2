@@ -1,19 +1,18 @@
 import s from "./Tabela.module.scss";
 import classNames from "classnames";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Box, Card, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import Corpo from "./Corpo";
 import THead from "./THead";
 
 function Tabela() {
     return (
-        <section className={classNames({
-            [s.corpo]: true,
-        })}>
-            <h2
-                className={classNames({
-                    [s.titulo]: true,
-                })}
-            >
+        <Box
+            className={classNames({
+                [s.corpo]: true,
+            })}
+            component={Card}
+        >
+            <h2 className={classNames({[s.titulo]: true,})}>
                 Tabela de conversões
             </h2>
 
@@ -39,9 +38,8 @@ function Tabela() {
                 </Table>
             </TableContainer>
 
-        </section>
+        </Box>
     );
 }
 
 export default Tabela;
-
