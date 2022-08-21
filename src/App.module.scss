@@ -16,7 +16,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    max-height: calc(70vh - 6em);
+    height: calc(100%);
 }
 
 @media screen and (max-width: 768px) {
