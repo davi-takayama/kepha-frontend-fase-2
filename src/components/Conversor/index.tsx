@@ -5,9 +5,9 @@ import ScaleIcon from "@mui/icons-material/Scale";
 import ScienceIcon from "@mui/icons-material/Science";
 import StraightenIcon from "@mui/icons-material/Straighten";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { converterPara, converterDe } from "util/states/atom";
+import { converterDe } from "util/states/atom";
 import { massas, quilo } from "util/valores/massa";
 import { litro, volumes } from "util/valores/volume";
 import { comprimentos, metro } from "util/valores/comprimento";
@@ -23,8 +23,7 @@ const Conversor = () => {
 
     const converterDeState = useRecoilValue(converterDe);
     const setConverterDe = useSetRecoilState(converterDe);
-    const converterParaState = useRecoilValue(converterPara);
-    const setConverterPara = useSetRecoilState(converterPara);
+    const [converterPara, setConverterPara] = useState("");
     const [entrada, setEntrada] = React.useState("");
     const [saida, setSaida] = React.useState("");
     const [unidadeSaida, setUnidadeSaida] = React.useState("");
@@ -59,13 +58,13 @@ const Conversor = () => {
             const item: IHistoricoItem = {
                 id: FSetId(),
                 unidade_a_converter: encontrarSimbolo(converterDeState),
-                unidade_convertida: encontrarSimbolo(converterParaState),
+                unidade_convertida: encontrarSimbolo(converterPara),
                 valor_a_converter: +(+entrada).toFixed(2),
                 valor_convertido: +(+valorConvertido).toFixed(2)
             };
             adicionarItem(item);
             setSaida(valorConvertido.toFixed(2));
-            setUnidadeSaida(encontrarSimbolo(converterParaState));
+            setUnidadeSaida(encontrarSimbolo(converterPara));
         }
     };
 
@@ -117,7 +116,7 @@ const Conversor = () => {
                     id={"converter_para"}
                     itens={opcoes.map((item) => { return { Nome: item }; })}
                     onChange={handleChangePara}
-                    value={converterParaState}
+                    value={converterPara}
                 />
             </div>
             
