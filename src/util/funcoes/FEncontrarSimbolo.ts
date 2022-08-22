@@ -1,10 +1,10 @@
 import { simbolos } from "util/valores/simbolos";
 
 const FEncontrarSimbolo = () => {
-    const simbolosCopia = simbolos;
     
+    //encontra o simbolo da unidade de medida de acordo com o nome dela
     return (nome: string) => {
-        const simbolo = simbolosCopia.find(item => item.nome === nome);
+        const simbolo = simbolos.find(item => item.nome === nome);
         return simbolo ? simbolo.simbolo : "";
     };
 };

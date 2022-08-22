@@ -1,5 +1,6 @@
 import { IComprimento } from "util/interfaces/IComprimento";
 
+// itens do tipo comprimento
 export const metro: IComprimento = {
     nome: "Metro",
     simbolo: "m",
@@ -24,4 +25,5 @@ export const milhas: IComprimento = {
     emMilhas: 1
 };
 
+//array com todos os comprimentos
 export const comprimentos: IComprimento[] = [metro, pes, milhas];

@@ -5,6 +5,7 @@ import { libras, onca, quilo } from "util/valores/massa";
 import { celsius, fahrenheit, kelvin } from "util/valores/temperatura";
 import { galao, litro, oncasFluidas } from "util/valores/volume";
 
+//pega o valor converter e o transforma de acordo com a unidade de origem e destino
 export function FConverter(valor: number): number {
     const para = useRecoilValue(converterPara);
 

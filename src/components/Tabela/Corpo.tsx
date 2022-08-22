@@ -10,6 +10,7 @@ export default function Corpo() {
     const medidaState = useRecoilValue(converterDe);
     let corpoTabela;
 
+    // mapeia o conteudo do corpo de acordo com a medida selecionada
     switch (medidaState) {
     case metro.nome:
         corpoTabela = comprimentos.map((item, index) => {

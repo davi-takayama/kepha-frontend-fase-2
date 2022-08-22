@@ -1,3 +1,4 @@
+//interface dos tipos de volume
 export interface IVolume {
     nome: string;
     simbolo: string;

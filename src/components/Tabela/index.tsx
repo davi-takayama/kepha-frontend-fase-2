@@ -12,7 +12,7 @@ function Tabela() {
             })}
             component={Paper}
         >
-            <h2 className={classNames({[s.titulo]: true,})}>
+            <h2 className={classNames({ [s.titulo]: true, })}>
                 Tabela de conversões
             </h2>
 
@@ -23,17 +23,17 @@ function Tabela() {
                             <TableCell>
                                 medida
                             </TableCell>
-                            {
-                                //header da tabela
-                                <THead />
-                            }
+
+                            {/* componente da primeira linha da tabela */}
+                            <THead />
+
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {
-                            //corpo da tabela
-                            <Corpo />
-                        }
+
+                        {/* componente do resto do corpo da tabela */}
+                        <Corpo />
+
                     </TableBody>
                 </Table>
             </TableContainer>

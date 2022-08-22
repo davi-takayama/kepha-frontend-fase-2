@@ -35,9 +35,9 @@ export default function Item({ item }: IProps) {
                     {item.valor_convertido}{item.unidade_convertida}
                 </div>
             </div>
-            <Button
-                onClick={() => removeItem(item.id)}
-            >
+            
+            {/* botao para deletar o proprio item da lista */}
+            <Button onClick={() => removeItem(item.id)}>
                 <Delete />
             </Button>
         </li>

@@ -1,3 +1,4 @@
+//interface dos tipos de tempratura
 export interface ITemperatura {
     nome: string;
     simbolo: string;

@@ -8,6 +8,7 @@ interface ISimbolos {
     simbolo: string;
 }
 
+//mapeia todos os tipos de medida usados no sistema com seu nome e simbolo apenas
 export const simbolos: ISimbolos[] = volumes.map(item => ({ nome: item.nome, simbolo: item.simbolo }))
     .concat(massas.map(item => ({ nome: item.nome, simbolo: item.simbolo })))
     .concat(comprimentos.map(item => ({ nome: item.nome, simbolo: item.simbolo })))

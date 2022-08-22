@@ -1,13 +1,14 @@
 .item {
     display: grid;
-    grid-template-columns: 6fr 1fr;
-    width: 80%;
+    grid-template-columns: 8fr 1fr;
+    min-width: 80%;
     padding: 1em;
     border-radius: 25px;
     font-size: 20px;
     margin: 0 auto;
     margin-bottom: 0.5em;
     text-align: center;
+    border: solid 1px gray;
 }
 
 .valores{
@@ -15,4 +16,6 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    border-right: 1px solid gray;
+    padding-right: 0.5em;
 }

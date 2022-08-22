@@ -10,6 +10,7 @@ export default function THead() {
     const medidaState = useRecoilValue(converterDe);
     let headerTabela;
 
+    //mapeia o conteudo da primeira linha de acordo com a medida selecionada
     switch (medidaState) {
     case metro.nome:
         headerTabela = comprimentos.map((item, index) => {

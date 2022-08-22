@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 
+// tema escuro criado com base no tema do material-ui
 export const darkTheme = createTheme({
     palette: {
         mode: "dark",
@@ -20,6 +21,7 @@ export const darkTheme = createTheme({
     },
 });
 
+// tema claro criado com base no tema do material-ui
 export const lightTheme = createTheme({
     palette: {
         mode: "light",

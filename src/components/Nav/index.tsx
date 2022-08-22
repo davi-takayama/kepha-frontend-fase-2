@@ -1,5 +1,4 @@
 import s from "./Nav.module.scss";
-import classNames from "classnames";
 import { Box, Paper, Switch } from "@mui/material";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tema } from "util/states/atom";
@@ -10,26 +9,24 @@ export default function Nav() {
     const modoState = useRecoilValue(tema);
     const setModoState = useSetRecoilState(tema);
 
-    function mudarTemaC_E() {
+    function trocarTema() {
         setModoState(!modoState);
     }
 
     return (
         <Box
-            className={classNames({ [s.nav]: true, })}
+            className={s.nav}
             component={Paper}
         >
-            <h1 className={
-                classNames({
-                    [s.titulo]: true,
-                })
-            }>
+            <h1 className={s.titulo}>
                 conversor de medidas
             </h1>
             <div className={s.switch}>
+
+                {/* switch que alterna entre modo claro e escuro */}
                 <Switch
                     checked={modoState}
-                    onClick={mudarTemaC_E}
+                    onClick={trocarTema}
                 />
                 {modoState ?
                     <LightModeIcon className={s.switch__icon} /> :

@@ -17,3 +17,7 @@ export const converterDe = atom({
     default: litro.nome
 });
 
+export const converterPara = atom({
+    key: "ConverterPara",
+    default: ""
+});

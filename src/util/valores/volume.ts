@@ -1,5 +1,6 @@
 import { IVolume } from "util/interfaces/IVolume";
 
+// itens do tipo volume
 export const litro: IVolume = {
     nome: "Litro",
     simbolo: "L",
@@ -24,4 +25,5 @@ export const galao: IVolume = {
     emGaloes: 1,
 };
 
+// array com todos os volumes
 export const volumes: IVolume[] = [litro, oncasFluidas, galao];

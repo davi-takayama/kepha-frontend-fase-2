@@ -1,5 +1,6 @@
 import { IMassa } from "util/interfaces/IMassa";
 
+// itens do tipo massa
 export const quilo: IMassa = {
     nome: "Quilo",
     simbolo: "kg",
@@ -24,4 +25,5 @@ export const onca: IMassa = {
     emOncas: 1
 };
 
+//array com todos os massas
 export const massas: IMassa[] = [quilo, libras, onca];

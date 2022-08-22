@@ -1,3 +1,4 @@
+//interface dos tipos de massa
 export interface IMassa {
     nome: string;
     simbolo: string;

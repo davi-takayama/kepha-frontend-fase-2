@@ -5,6 +5,7 @@ import { IHistoricoItem } from "util/interfaces/IHistoricoItem";
 const useAdicionaItem = () => {
     const setHistorico = useSetRecoilState(historico);
 
+    //acrescenta um item novo ao historico
     return (item: IHistoricoItem) => {
         return setHistorico(listaAntiga  => [...listaAntiga, item]);
     };

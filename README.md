@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Sobre o projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
++ O projeto foi construido com o framework react, usando os modulos/dependencias "recoil", "eslint", "sass", "css-modules", "classnames" e componentes do "mui". A pagina é composta por 5 componentes principais (header, footer, historico de conversoes, conversor de medidas e uma tabela), dispostos no arquivo App.tsx com layout em grid.
 
-## Available Scripts
+## Para iniciar o projeto
++ Para que o projeto seja iniciado, é necessaria a instalação do node. com ele instalado, navegue ate o diretorio do projeto e execute o comando "npm i" no terminal e em seguida o comando "npm start" para iniciar o servidor da pagina. para acessá-la, acesse o endereço http://localhost:3000 no browser.
 
-In the project directory, you can run:
+## Componentes
 
-### `npm start`
+### Header
+> o header possui apenas a descricao do que a pagina faz e um switch que alterna o tema entre claro e escuro..
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Conversor
+> o componente conversor é o principal da pagina, podendo alterar 3 dos 5 componentes da pagina:
+>> o proprio conversor, o historico e a tabela.
+>
+> nele existem 2 seletores (de que e para que converter), um campo de texto para digitar a medida,  um botao para converter e uma tag "p" para exibir o valor da conversao.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Historico
+> O historico armazena todas as conversoes feitas localmente no browser, tendo as unidades de medida que foram convertidas e o valor da conversao, alem de permitir deletar cada conversao individualmente
 
-### `npm test`
+### Tabela
+> A tabela mostra os valores de cada unidade de medida em outras unidades. Os valores dela são alterados de acordo com a unidade de medida selecionada no conversor, exibindo dados de temperatura, volume, comprimento e massa.
+### Footer
+> o footer explica o motivo da criacao do projeto e links para contato
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pasta "util"
+a pasta util contem 5 pastas e 1 arquivo
+> pasta "funcoes"
+>> contem funcoes auxiliares para o projeto que foram armazenadas fora dos arquivos de componentes por questoes visuais e de organizacao
+>
+> pasta "hooks"
+>> contem os hooks usados nos componentes do projeto que utilizam o recoil
+>
+> pasta "interfaces"
+>> contem algumas das interfaces usadas no projeto (com excessao das Props)
+>
+> pasta "states"
+>> contem os "atomos" (states) criados com o recoil que sao usados em mais de um componente
+>
+> pasta "valores"
+>> armazena os dados usados para a conversao de valores e montagem da tabela e dos itens do historico
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> arquivo "tema.ts"
+>> aramazena as paletas de cores usada para construir os temas do projeto, tendo como base a paleta do mui

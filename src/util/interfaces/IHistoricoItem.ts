@@ -1,3 +1,4 @@
+// interface dos itens do historico
 export interface IHistoricoItem {
     id: number;
     unidade_a_converter: string;
