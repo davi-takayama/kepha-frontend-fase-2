@@ -1,14 +1,12 @@
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
-interface IItens {
-    Nome: string;
-    Icone?: JSX.Element;
-}
-
 interface Props {
     label: string;
     id: string;
-    itens: IItens[];
+    itens: {
+        Nome: string;
+        Icone?: JSX.Element;
+    }[];
     onChange: ((event: SelectChangeEvent<string>, child: React.ReactNode) => void) | undefined;
     value: string;
 }

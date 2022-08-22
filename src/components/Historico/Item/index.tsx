@@ -5,7 +5,7 @@ import s from "./Item.module.scss";
 import { Button } from "@mui/material";
 import { useRemoveItem } from "util/hooks/useRemoveItem";
 import { useRecoilValue } from "recoil";
-import { claro_escuro } from "util/states/atom";
+import { tema } from "util/states/atom";
 import classNames from "classnames";
 
 interface IProps {
@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export default function Item({ item }: IProps) {
-    const modoState = useRecoilValue(claro_escuro);
+    const modoState = useRecoilValue(tema);
 
     const removeItem = useRemoveItem();
 

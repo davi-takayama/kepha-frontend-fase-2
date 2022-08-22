@@ -8,11 +8,11 @@ import Tabela from "components/Tabela";
 import { Box, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { darkTheme, lightTheme } from "util/tema";
-import { claro_escuro } from "util/states/atom";
+import { tema } from "util/states/atom";
 import { useRecoilValue } from "recoil";
 
 export default function App() {
-    const modoState = useRecoilValue(claro_escuro);
+    const modoState = useRecoilValue(tema);
 
     return (
         <StrictMode>

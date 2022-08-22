@@ -2,8 +2,8 @@ import { atom } from "recoil";
 import { litro } from "util/valores/volume";
 import { IHistoricoItem } from "../interfaces/IHistoricoItem";
 
-export const claro_escuro = atom({
-    key: "claro_escuro",
+export const tema = atom({
+    key: "tema",
     default: true
 });
 

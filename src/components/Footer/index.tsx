@@ -5,10 +5,10 @@ import classNames from "classnames";
 import s from "./Footer.module.scss";
 import { Box, Paper } from "@mui/material";
 import { useRecoilValue } from "recoil";
-import { claro_escuro } from "util/states/atom";
+import { tema } from "util/states/atom";
 
 function Footer() {
-    const modoState = useRecoilValue(claro_escuro);
+    const modoState = useRecoilValue(tema);
 
     return (
         <Box component={Paper} >
