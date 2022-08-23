@@ -1,0 +1,48 @@
+.gamer {
+    border: 3px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    background-clip: border-box content-box;
+    background-origin: border-box;
+    animation: rotate 360s linear infinite;
+
+    animation-name: rotate;
+    animation-duration: 3s;
+}
+
+@keyframes rotate {
+    0% {
+        border-image: linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    12.5% {
+        border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    25% {
+        border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    37.5% {
+        border-image: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    50% {
+        border-image: linear-gradient(180deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    62.5% {
+        border-image: linear-gradient(225deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    75% {
+        border-image: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    87.5% {
+        border-image: linear-gradient(315deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+    100% {
+        border-image: linear-gradient(360deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+}

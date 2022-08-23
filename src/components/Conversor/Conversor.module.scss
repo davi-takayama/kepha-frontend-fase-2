@@ -14,11 +14,11 @@ input[type=number] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border-radius: 25px;
     padding: 1em;
     justify-content: space-between;
     height: calc(25%);
     width: calc(100% - 6em);
+    border: 3px solid transparent;
 }
 
 .inputs {
@@ -30,8 +30,7 @@ input[type=number] {
     text-align: center;
 }
 
-.output
-{
+.output {
     margin-top: 1em;
     display: flex;
     flex-direction: row;

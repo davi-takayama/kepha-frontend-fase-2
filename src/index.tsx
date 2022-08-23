@@ -2,7 +2,7 @@ import App from "App";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RecoilRoot } from "recoil";
-import "./reset.css";
+import "./styles/reset.css";
 import "./index.css";
 
 const root = ReactDOM.createRoot(

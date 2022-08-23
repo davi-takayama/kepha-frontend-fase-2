@@ -7,6 +7,11 @@ export const tema = atom({
     default: true
 });
 
+export const gamer = atom({
+    key: "gamer",
+    default: false
+});
+
 export const historico = atom<IHistoricoItem[]>({
     key: "historico",
     default: []

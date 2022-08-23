@@ -1,7 +1,7 @@
 import { IHistoricoItem } from "util/interfaces/IHistoricoItem";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Delete from "@mui/icons-material/Delete";
-import s from "./Item.module.scss";
+import style from "./Item.module.scss";
 import { Button } from "@mui/material";
 import { useRemoveItem } from "util/hooks/useRemoveItem";
 import { useRecoilValue } from "recoil";
@@ -21,12 +21,12 @@ export default function Item({ item }: IProps) {
         <li
             className={
                 classNames({
-                    [s.item]: true,
-                    [s.item__light]: !modoState,
-                    [s.item__dark]: modoState
+                    [style.item]: true,
+                    [style.item__light]: !modoState,
+                    [style.item__dark]: modoState
                 })
             }>
-            <div className={s.valores}>
+            <div className={style.valores}>
                 <div>
                     {item.valor_a_converter}{item.unidade_a_converter}
                 </div>

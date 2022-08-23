@@ -1,4 +1,5 @@
 import style from "./Conversor.module.scss";
+import tema from "styles/temaGamer.module.scss";
 import { Box, Button, Paper, SelectChangeEvent, TextField } from "@mui/material";
 import ScaleIcon from "@mui/icons-material/Scale";
 import ScienceIcon from "@mui/icons-material/Science";
@@ -6,7 +7,7 @@ import StraightenIcon from "@mui/icons-material/Straighten";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
 import React, { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { converterDe, converterPara } from "util/states/atom";
+import { converterDe, converterPara, gamer } from "util/states/atom";
 import { massas, quilo } from "util/valores/massa";
 import { litro, volumes } from "util/valores/volume";
 import { comprimentos, metro } from "util/valores/comprimento";
@@ -17,9 +18,11 @@ import useAdicionaItem from "util/hooks/useAdicionaItem";
 import { FSetId } from "util/funcoes/FSetId";
 import FEncontrarSimbolo from "util/funcoes/FEncontrarSimbolo";
 import Seletor from "./Seletor";
+import classNames from "classnames";
 
 const Conversor = () => {
 
+    const gamerState = useRecoilValue(gamer);
     const converterDeState = useRecoilValue(converterDe);
     const setConverterDe = useSetRecoilState(converterDe);
     const converterParaState = useRecoilValue(converterPara);
@@ -99,11 +102,15 @@ const Conversor = () => {
 
     return (
         <Box
-            className={style.corpo}
+            className={
+                classNames({
+                    [style.corpo]: true,
+                    [tema.gamer]: gamerState
+                })}
             component={Paper}
         >
             <div className={style.inputs}>
-                {/* seletor da unidade a ser convertida */}
+                {/* seletor da unidade a ser convertida. altera o estado da tabela da pagina */}
                 <Seletor
                     label={"converter de"}
                     id={"converterDe"}
@@ -140,7 +147,7 @@ const Conversor = () => {
                 <p>
                     conversao: {saida}{unidadeSaida}
                 </p>
-                
+
                 {/* botao para converter e adicionar a conversao ao historico */}
                 <Button
                     variant="contained"
