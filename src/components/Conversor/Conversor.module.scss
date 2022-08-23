@@ -15,8 +15,8 @@ input[type=number] {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 1em;
-    justify-content: space-between;
-    height: calc(25%);
+    justify-content: space-evenly;
+    height: fit-content;
     width: calc(100% - 6em);
     border: 3px solid transparent;
 }
