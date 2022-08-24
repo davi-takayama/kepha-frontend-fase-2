@@ -17,9 +17,9 @@ export default function Corpo() {
             return (
                 <TableRow key={index}>
                     <TableCell>{item.nome + " (" + item.simbolo + ")"}</TableCell>
-                    <TableCell>{item.emMetro}</TableCell>
-                    <TableCell>{item.emPes}</TableCell>
-                    <TableCell>{item.emMilhas}</TableCell>
+                    <TableCell>{item.emMetro}m</TableCell>
+                    <TableCell>{item.emPes}ft</TableCell>
+                    <TableCell>{item.emMilhas}mi</TableCell>
                 </TableRow>
             );
         });
@@ -29,9 +29,9 @@ export default function Corpo() {
             return (
                 <TableRow key={index}>
                     <TableCell>{item.nome + " (" + item.simbolo + ")"}</TableCell>
-                    <TableCell>{item.emLitro.toFixed(3)}</TableCell>
-                    <TableCell>{item.emOncas.toFixed(3)}</TableCell>
-                    <TableCell>{item.emGaloes.toFixed(3)}</TableCell>
+                    <TableCell>{item.emLitro.toFixed(3)}L</TableCell>
+                    <TableCell>{item.emOncas.toFixed(3)}fl.oz</TableCell>
+                    <TableCell>{item.emGaloes.toFixed(3)}gal</TableCell>
                 </TableRow>
             );
         });
@@ -41,9 +41,9 @@ export default function Corpo() {
             return (
                 <TableRow key={index}>
                     <TableCell>{item.nome + " (" + item.simbolo + ")"}</TableCell>
-                    <TableCell>{item.emCelsius(0).toFixed(2)}</TableCell>
-                    <TableCell>{item.emKelvin(0).toFixed(2)}</TableCell>
-                    <TableCell>{item.emFahrenheit(0).toFixed(2)}</TableCell>
+                    <TableCell>{item.emCelsius(0).toFixed(2)}°C</TableCell>
+                    <TableCell>{item.emKelvin(0).toFixed(2)}K</TableCell>
+                    <TableCell>{item.emFahrenheit(0).toFixed(2)}°F</TableCell>
                 </TableRow>
             );
         });

@@ -23,3 +23,27 @@
     width: 20%;
     align-items: center;
 }
+
+@media screen and (max-width: 1200px) {
+    .switches{
+        width: 30%;
+    }
+
+    .titulo{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .titulo{
+        font-size: 20px;
+    }
+
+    .switches{
+        width: 40%;
+    }
+
+    .nav{
+        margin: 3em 3em 0 3em;
+    }
+}

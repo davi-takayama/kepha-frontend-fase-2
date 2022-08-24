@@ -50,6 +50,7 @@ input[type=number] {
         flex-direction: column;
         width: 100%;
         height: calc(70% - 1em);
+        align-items: center;
     }
 
     .output {

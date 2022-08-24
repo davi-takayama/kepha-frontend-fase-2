@@ -24,13 +24,17 @@
 @media screen and (max-width: 768px) {
     .page {
         grid-template-rows: auto auto;
-        grid-template-columns: 1fr;
-        height: max-content;
+        grid-template-columns: auto;
+        height: fit-content;
     }
 
     .main {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto;
         max-height: 170vh;
         max-width: 100vw;
+    }
+
+    .content{
+        margin-bottom: 3em;
     }
 }
