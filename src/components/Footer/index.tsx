@@ -9,6 +9,7 @@ import { tema } from "util/states/atom";
 
 function Footer() {
     const modoState = useRecoilValue(tema);
+    // lista de contatos e icones a serem mapeados no rodape
     const contatos = [
         {
             site: "github",

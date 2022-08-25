@@ -144,9 +144,7 @@ const Conversor = () => {
 
             <div className={style.output}>
                 {/* valor da conversao */}
-                <p>
-                    conversao: {saida}{unidadeSaida}
-                </p>
+                <p>conversao: {saida}{unidadeSaida}</p>
 
                 {/* botao para converter e adicionar a conversao ao historico */}
                 <Button
