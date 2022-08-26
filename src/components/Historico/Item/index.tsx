@@ -35,10 +35,17 @@ export default function Item({ item }: IProps) {
                     {item.valor_convertido}{item.unidade_convertida}
                 </div>
             </div>
-            
+
             {/* botao para deletar o proprio item da lista */}
-            <Button onClick={() => removeItem(item.id)}>
-                <Delete />
+            <Button onClick={() => removeItem(item.id)}
+                sx={{
+                    m:1, p:0,
+                    minWidth: "1.5em",
+                }}
+            >
+                <Delete
+                    sx={{ m: 0.1, p: 0.1 }}
+                />
             </Button>
         </li>
     );

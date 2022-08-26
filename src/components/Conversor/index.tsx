@@ -30,38 +30,40 @@ const Conversor = () => {
     const [entrada, setEntrada] = React.useState("");
     const [saida, setSaida] = React.useState("");
     const [unidadeSaida, setUnidadeSaida] = React.useState("");
+    const [desabilitado, setDesabilitado] = React.useState(true);
     const converter = (valor: number) => FConverter(valor);
     const valorConvertido = converter(+entrada);
     const adicionarItem = useAdicionaItem();
     const encontrarSimbolo = FEncontrarSimbolo();
-    let opcoesConverterPara: string[];
+    let opcoesMedidas: string[];
+    const padrao = "selecionar";
 
-    //muda as opceos de acordo com o valor selecionado 
-    //faz um map para pegar o nome das unidades de medida da categoria
-    //com excessao de quilo, litro, metro e celsius
+    // muda as opceos de acordo com o valor selecionado 
+    // faz um map para pegar o nome das unidades de medida da categoria
+    // com excessao de quilo, litro, metro e celsius
     switch (converterDeState) {
     case litro.nome:
-        opcoesConverterPara = volumes.map(item => item.nome).filter(item => item !== litro.nome);
+        opcoesMedidas = volumes.map(item => item.nome).filter(item => item !== litro.nome);
         break;
     case metro.nome:
-        opcoesConverterPara = comprimentos.map(item => item.nome).filter(item => item !== metro.nome);
+        opcoesMedidas = comprimentos.map(item => item.nome).filter(item => item !== metro.nome);
         break;
     case quilo.nome:
-        opcoesConverterPara = massas.map(item => item.nome).filter(item => item !== quilo.nome);
+        opcoesMedidas = massas.map(item => item.nome).filter(item => item !== quilo.nome);
         break;
     case celsius.nome:
-        opcoesConverterPara = temperaturas.map(item => item.nome).filter(item => item !== celsius.nome);
+        opcoesMedidas = temperaturas.map(item => item.nome).filter(item => item !== celsius.nome);
         break;
     default:
-        opcoesConverterPara = volumes.map(item => item.nome).filter(item => item !== litro.nome);
+        opcoesMedidas = volumes.map(item => item.nome).filter(item => item !== litro.nome);
     }
 
-    const enviarAoHistorico = () => {
-        //verifica se o valor é positivo ou igual a zero se não for uma temperatura
-        if (converterDeState !== celsius.nome && +entrada < 0) {
-            alert("o valor não pode ser negativo");
-        } else {
+    const opcoes: string[] = [padrao, ...opcoesMedidas];
 
+    const enviarAoHistorico = () => {
+        // verifica se é os valores são válidos para o tipo da conversão
+        if (converterDeState !== celsius.nome && +entrada < 0) alert("o valor não pode ser negativo");
+        else {
             // constroi um item do historico
             const item: IHistoricoItem = {
                 id: FSetId(),
@@ -83,6 +85,10 @@ const Conversor = () => {
     // define a constante "converterDe" para o valor selecionado 
     const handleChangeDe = (event: SelectChangeEvent<string>) => {
         setConverterDe(event.target.value);
+        setEntrada("0");
+        setConverterPara(opcoes[0]);
+        setSaida("");
+        setUnidadeSaida("");
     };
 
     // define a constante "converterPara" para o valor selecionado
@@ -90,15 +96,21 @@ const Conversor = () => {
         setConverterPara(event.target.value);
     };
 
-    // define o valor inicial do "converterPara" para o primeiro valor das opcoes
-    // zera o valor da saida
-    //toda vez que o valor de "converterDe" for alterado
+    // stribui o valor "converterPara" assim que a pagina carrega
     useEffect(() => {
-        setEntrada("0");
-        setConverterPara(opcoesConverterPara[0]);
-        setSaida("");
-        setUnidadeSaida("");
-    }, [converterDeState]);
+        setConverterPara(opcoes[0]);
+    }, []);
+
+    // habilita ou desabilita o botão de converter se o valor de "converterPara" for válido
+    useEffect(() => {
+        if (converterParaState !== padrao) {
+            setDesabilitado(false);
+        }else{
+            setDesabilitado(true);
+        }
+    }, [converterParaState]);
+    
+
 
     return (
         <Box
@@ -136,7 +148,7 @@ const Conversor = () => {
                 <Seletor
                     label={"converter para"}
                     id={"converter_para"}
-                    itens={opcoesConverterPara.map((item) => { return { Nome: item }; })}
+                    itens={opcoes.map((item) => { return { Nome: item }; })}
                     onChange={handleChangePara}
                     value={converterParaState}
                 />
@@ -151,6 +163,7 @@ const Conversor = () => {
                     variant="contained"
                     size="large"
                     onClick={enviarAoHistorico}
+                    disabled={desabilitado}
                 >
                     Converter
                 </Button>
